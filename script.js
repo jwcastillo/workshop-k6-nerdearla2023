@@ -63,6 +63,7 @@ export default function () {
 export function handleSummary(data) {
   return {
     'stdout': textSummary(data, { indent: ' ', enableColors: true }), // Show the text summary to stdout...
+    'junit.xml': jUnit(data), // Transform summary and save it as a JUnit XML...
 
     'summary.json': JSON.stringify(data), //el objeto de datos predeterminado
   };
