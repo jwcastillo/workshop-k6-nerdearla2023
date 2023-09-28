@@ -23,7 +23,7 @@ jobs:
 
         env:
           BASE_URL: "http://quickpizza:3333"
-          THRESHOLD:  ${{ env.THRESHOLD }}
+          THRESHOLD:  ${{ vars.THRESHOLD }}
           K6_PROMETHEUS_RW_USERNAME:  ${{ secrets.K6_PROMETHEUS_RW_USERNAME }}
           K6_PROMETHEUS_RW_PASSWORD: ${{ secrets.K6_PROMETHEUS_RW_PASSWORD }}
           K6_PROMETHEUS_RW_SERVER_URL: ${{ secrets.PROMETHEUS_RW_SERVER_URL }}
