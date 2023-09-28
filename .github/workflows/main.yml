@@ -19,7 +19,7 @@ jobs:
         uses: grafana/k6-action@v0.3.0
         with:
           filename: script.js
-          flags: -o experimental-prometheus-rw 
+          flags: -o experimental-prometheus-rw --tag testid=${{ github.run_id }}-${{ github.run_number }}
 
         env:
           BASE_URL: "http://quickpizza:3333"
