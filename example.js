@@ -59,7 +59,7 @@ pizzas.add(1);
 // Añadimos el número de ingredientes de la pizza a la tendencia
 ingredients.add(res.json().pizza.ingredients.length);
   console.log(`${res.json().pizza.name} (${res.json().pizza.ingredients.length} ingredients)`);
-  sleep(0.5);
+  sleep(1);
 
 }
 
