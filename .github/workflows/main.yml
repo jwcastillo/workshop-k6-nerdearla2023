@@ -19,7 +19,7 @@ jobs:
         uses: grafana/k6-action@v0.3.0
         with:
           filename: script.js
-          flags: -o experimental-prometheus-rw --tag testid=${{ github.run_id }}-${{ github.run_number }}
+          flags: -o experimental-prometheus-rw --tag testid=nerdearla2023-quickpizza-${{ github.run_number }}
 
         env:
           BASE_URL: "http://quickpizza:3333"
@@ -30,6 +30,11 @@ jobs:
           K6_PROMETHEUS_RW_STALE_MARKERS: true
           K6_PROMETHEUS_RW_TREND_STATS: "p(95),p(99),min,max"
 
+      - name: Store performance test results
+        uses: actions/upload-artifact@v3
+        with:
+            name: k6-summary-report
+            path: summary.json
 
       - name: Publish Test Report
         uses: mikepenz/action-junit-report@v4
