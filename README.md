@@ -638,6 +638,7 @@ jobs:
         image: ghcr.io/grafana/quickpizza-local:0.3.0
         ports:
           - 3333:3333
+    
 
     steps:
       - name: Checkout

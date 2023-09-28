@@ -14,11 +14,16 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-  
+
       - name: Run local k6 test
         uses: grafana/k6-action@v0.3.0
         with:
           filename: script.js
+          flags: -o experimental-prometheus-rw 
+
         env:
           BASE_URL: "http://quickpizza:3333"
-          THRESHOLD: env.THRESHOLD
+          THRESHOLD:  ${{ env.THRESHOLD }}
+          K6_PROMETHEUS_RW_USERNAME:  ${{ secrets.K6_PROMETHEUS_RW_USERNAME }}
+          K6_PROMETHEUS_RW_PASSWORD: ${{ secrets.K6_PROMETHEUS_RW_PASSWORD }}
+          K6_PROMETHEUS_RW_SERVER_URL: ${{ secrets.PROMETHEUS_RW_SERVER_URL }}
