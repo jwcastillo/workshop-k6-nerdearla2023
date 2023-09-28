@@ -642,7 +642,7 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
   
       - name: Run local k6 test
         uses: grafana/k6-action@v0.3.0
