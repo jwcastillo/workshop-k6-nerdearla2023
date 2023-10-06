@@ -35,7 +35,7 @@ export default function () {
     mustBeVegetarian: false,
     excludedIngredients: ["pepperoni"],
     excludedTools: ["knife"],
-    maxNumberOfToppings: 6,
+    maxNumberOfToppings: 10,
     minNumberOfToppings: 2,
   };
   let res = http.post(`${BASE_URL}/api/pizza`, JSON.stringify(restrictions), {
